@@ -15,7 +15,6 @@
   --serif: 'Syne', sans-serif; --body: 'DM Sans', sans-serif;
 }
 html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg); color: var(--text); font-family: var(--body); }
-
 .deck { width: 100%; height: 100vh; position: relative; }
 .slide {
   position: absolute; inset: 0; display: flex; flex-direction: column;
@@ -25,7 +24,6 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
 }
 .slide.active { opacity: 1; pointer-events: all; transform: translateX(0); }
 .slide.prev { opacity: 0; transform: translateX(-48px); }
-
 .grid-bg {
   position: absolute; inset: 0; z-index: 0; opacity: 0.022;
   background-image: linear-gradient(var(--text) 1px, transparent 1px), linear-gradient(90deg, var(--text) 1px, transparent 1px);
@@ -46,10 +44,8 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
 .nav-dot { width: 4px; height: 4px; background: var(--muted2); cursor: pointer; transition: all .25s; }
 .nav-dot.active { background: var(--accent); width: 18px; }
 .nav-counter { font-family: var(--serif); font-size: 11px; color: var(--muted); letter-spacing: .1em; min-width: 36px; text-align: center; }
-
 .key-hint { position: fixed; top: 28px; right: 36px; z-index: 200; font-size: 11px; color: var(--muted2); letter-spacing: .06em; display: flex; gap: 6px; align-items: center; }
 .key { background: var(--bg3); border: 0.5px solid var(--border); padding: 2px 7px; font-family: var(--serif); font-size: 11px; }
-
 .slide-num { font-family: var(--serif); font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 10px; }
 .slide-num::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
 
@@ -58,21 +54,16 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
 .s1-title { font-family: var(--serif); font-size: clamp(68px, 10.5vw, 132px); font-weight: 800; line-height: .9; letter-spacing: -.03em; text-transform: uppercase; margin: 24px 0 36px; }
 .s1-title em { font-style: normal; color: var(--accent); }
 .s1-sub { font-size: 15px; color: var(--muted); max-width: 500px; line-height: 1.75; }
-.s1-stats { display: flex; gap: 52px; margin-top: 60px; padding-top: 36px; border-top: 0.5px solid var(--border); }
-.s1-stat-n { font-family: var(--serif); font-size: 34px; font-weight: 800; }
-.s1-stat-l { font-size: 12px; color: var(--muted); letter-spacing: .04em; margin-top: 2px; }
 .s1-niches { display: flex; gap: 10px; margin-top: 48px; }
 .s1-tag { font-family: var(--serif); font-size: 13px; font-weight: 600; letter-spacing: .04em; padding: 6px 16px; border: 0.5px solid var(--border-h); color: var(--muted); transition: all .2s; }
 .s1-tag:hover { border-color: var(--accent); color: var(--accent); }
 
-/* TWO-COL LAYOUT */
-.two-col { position: relative; z-index: 1; display: grid; grid-template-columns: 280px 1fr; height: 100%; }
-.two-col-wide { grid-template-columns: 300px 1fr; }
+/* TWO-COL */
+.two-col { position: relative; z-index: 1; display: grid; grid-template-columns: 300px 1fr; height: 100%; }
 .col-left { padding: 80px 40px 120px; border-right: 0.5px solid var(--border); display: flex; flex-direction: column; justify-content: center; }
 .col-right { padding: 72px 60px 120px; display: flex; flex-direction: column; justify-content: center; overflow-y: auto; }
 .col-right::-webkit-scrollbar { width: 2px; }
 .col-right::-webkit-scrollbar-thumb { background: var(--border); }
-
 .col-left-num { font-family: var(--serif); font-size: 88px; font-weight: 800; color: rgba(255,255,255,0.04); line-height: 1; }
 .col-left-title { font-family: var(--serif); font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: -.01em; line-height: 1.1; margin-top: -18px; }
 .col-left-desc { font-size: 13px; color: var(--muted); line-height: 1.75; margin-top: 14px; }
@@ -100,10 +91,8 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
 .expand-icon { font-size: 18px; color: var(--muted2); transition: transform .3s, color .2s; flex-shrink: 0; width: 22px; text-align: center; line-height: 1; padding-top: 2px; }
 .svc-row:hover .expand-icon { color: var(--accent); }
 .svc-row.open .expand-icon { transform: rotate(45deg); color: var(--accent); }
-
 .svc-detail { overflow: hidden; max-height: 0; transition: max-height .45s ease, padding .3s; }
 .svc-detail.open { max-height: 320px; padding-bottom: 20px; }
-
 .detail-3col { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 20px; }
 .dcol-label { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted2); margin-bottom: 7px; }
 .dcol-text { font-size: 12px; color: var(--muted); line-height: 1.65; }
@@ -124,30 +113,15 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
 .strat-row.open .strat-expand { transform: rotate(45deg); color: var(--accent2); }
 .strat-detail { overflow: hidden; max-height: 0; transition: max-height .45s ease, padding .3s; }
 .strat-detail.open { max-height: 260px; padding-bottom: 20px; }
-
-/* PRICING */
-.price-inner { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; padding: 80px 88px 120px; height: 100%; }
-.price-title { font-family: var(--serif); font-size: clamp(38px, 5.5vw, 68px); font-weight: 800; text-transform: uppercase; letter-spacing: -.02em; line-height: .93; margin: 18px 0 48px; }
-.price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); max-width: 860px; }
-.price-card { background: var(--bg); padding: 40px 36px; }
-.price-card-title { font-family: var(--serif); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 12px; }
-.price-card-text { font-size: 13px; color: var(--muted); line-height: 1.8; }
-.price-list { margin-top: 20px; list-style: none; }
-.price-list li { font-size: 13px; color: var(--muted); padding: 7px 0; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; gap: 10px; }
-.price-list li::before { content: ''; width: 4px; height: 4px; background: var(--accent); flex-shrink: 0; }
-.price-box { margin-top: 24px; padding: 18px 20px; border: 0.5px solid var(--border); background: rgba(200,245,66,0.025); }
-.price-box-label { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.price-box-text { font-size: 13px; color: var(--muted); line-height: 1.7; }
 </style>
 </head>
 <body>
 
 <div class="key-hint"><span class="key">←</span><span class="key">→</span></div>
-
 <div class="nav-bar">
   <button class="nav-btn" onclick="go(-1)">←</button>
   <div class="nav-progress" id="dots"></div>
-  <div class="nav-counter" id="counter">1 / 8</div>
+  <div class="nav-counter" id="counter">1 / 7</div>
   <button class="nav-btn" onclick="go(1)">→</button>
 </div>
 
@@ -183,15 +157,15 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
       <div class="cat-list">
         <div class="cat-item" onclick="goTo(2)">
           <div class="cat-item-left"><span class="cat-item-n">01</span><span class="cat-item-name">Рынок, конкуренты и аудитория</span></div>
-          <span class="cat-item-count">4 услуги →</span>
+          <span class="cat-item-count">3 услуги →</span>
         </div>
         <div class="cat-item" onclick="goTo(3)">
           <div class="cat-item-left"><span class="cat-item-n">02</span><span class="cat-item-name">Продукт и оффер</span></div>
-          <span class="cat-item-count">4 услуги →</span>
+          <span class="cat-item-count">3 услуги →</span>
         </div>
         <div class="cat-item" onclick="goTo(4)">
           <div class="cat-item-left"><span class="cat-item-n">03</span><span class="cat-item-name">Каналы и медиа</span></div>
-          <span class="cat-item-count">3 услуги →</span>
+          <span class="cat-item-count">2 услуги →</span>
         </div>
         <div class="cat-item" onclick="goTo(5)">
           <div class="cat-item-left"><span class="cat-item-n">04</span><span class="cat-item-name">Креативы и контент</span></div>
@@ -206,11 +180,11 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
   </div>
 </div>
 
-<!-- SLIDE 3: Рынок и конкуренты -->
+<!-- SLIDE 3: Рынок, конкуренты и аудитория -->
 <div class="slide">
   <div class="grid-bg"></div>
   <div class="glow" style="width:360px;height:360px;top:-60px;left:240px;background:rgba(200,245,66,0.04)"></div>
-  <div class="two-col two-col-wide">
+  <div class="two-col">
     <div class="col-left">
       <div class="col-left-num">01</div>
       <div class="col-left-title">Рынок, конкуренты и аудитория</div>
@@ -218,57 +192,28 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
     </div>
     <div class="col-right">
       <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Market Research</div><div class="svc-tagline">Анализ рынка в разрезе гео и каналов</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Полный анализ конкурентного ландшафта в выбранном гео: кто присутствует, куда направляют рекламные бюджеты, какие каналы используют, как строится воронка привлечения и оффер на каждом этапе.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Выход в новое гео</span><span class="dtag-w">Запуск кампании</span><span class="dtag-w">Ребрендинг</span><span class="dtag-w">Низкая эффективность размещений</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Инсайты под медиаплан</span><span class="dtag-o">Офферы конкурентов</span><span class="dtag-o">Референсы креативов</span><span class="dtag-o">Рекомендации по каналам</span></div></div>
-          </div>
-        </div>
+        <div class="svc-row-head"><div><div class="svc-name">Market Research</div><div class="svc-tagline">Анализ рынка в разрезе гео и каналов</div></div><span class="expand-icon">+</span></div>
+        <div class="svc-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Полный анализ конкурентного ландшафта в выбранном гео: кто присутствует, куда направляют рекламные бюджеты, какие каналы используют, как строится воронка привлечения и оффер на каждом этапе.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Выход в новое гео</span><span class="dtag-w">Запуск кампании</span><span class="dtag-w">Ребрендинг</span><span class="dtag-w">Низкая эффективность размещений</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Инсайты под медиаплан</span><span class="dtag-o">Офферы конкурентов</span><span class="dtag-o">Референсы креативов</span><span class="dtag-o">Рекомендации по каналам</span></div></div>
+        </div></div>
       </div>
       <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Competitor Analysis</div><div class="svc-tagline">Глубокий разбор одного или группы конкурентов</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Детальный разбор конкретного конкурента или группы: продукт, маркетинговая стратегия, позиционирование, сильные и слабые стороны, точки уязвимости — всё, что можно использовать как конкурентное преимущество.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Потеря доли рынка</span><span class="dtag-w">Появился сильный игрок</span><span class="dtag-w">Подготовка к питчу</span><span class="dtag-w">Обновление стратегии</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Полный разбор по продукту и маркетингу</span><span class="dtag-o">Слабые места конкурента</span><span class="dtag-o">Точки для дифференциации</span></div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Trend Research</div><div class="svc-tagline">Что растёт в нише, куда движется рынок</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Анализ актуальных трендов в нише: новые форматы, механики привлечения, поведение аудитории, технологии и подходы, которые начинают работать. Помогает строить стратегию на опережение, а не реагировать на уже устоявшееся.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Планирование стратегии на период</span><span class="dtag-w">Поиск точек роста</span><span class="dtag-w">Выбор направления развития</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Карта трендов с примерами</span><span class="dtag-o">Что тестировать в первую очередь</span><span class="dtag-o">Прогноз по нише</span></div></div>
-          </div>
-        </div>
+        <div class="svc-row-head"><div><div class="svc-name">Competitor Analysis</div><div class="svc-tagline">Глубокий разбор одного или группы конкурентов</div></div><span class="expand-icon">+</span></div>
+        <div class="svc-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Детальный разбор конкретного конкурента или группы: продукт, маркетинговая стратегия, позиционирование, сильные и слабые стороны, точки уязвимости — всё, что можно использовать как конкурентное преимущество.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Потеря доли рынка</span><span class="dtag-w">Появился сильный игрок</span><span class="dtag-w">Подготовка к питчу</span><span class="dtag-w">Обновление стратегии</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Полный разбор по продукту и маркетингу</span><span class="dtag-o">Слабые места конкурента</span><span class="dtag-o">Точки для дифференциации</span></div></div>
+        </div></div>
       </div>
       <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Audience Research</div><div class="svc-tagline">Сегменты ЦА, триггеры, барьеры, модели поведения</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Комплексное исследование целевой аудитории в нише: кто эти люди, какие у них запросы и потребности, что триггерит к выбору продукта, какие барьеры возникают, как они принимают решение. Анализируем поведение, мотивы и паттерны выбора — не демографию, а реальную психографику.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Выход в новую нишу или гео</span><span class="dtag-w">Низкая конверсия из рекламы</span><span class="dtag-w">Разработка нового оффера</span><span class="dtag-w">Обновление коммуникации</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Портреты аудиторных сегментов</span><span class="dtag-o">Триггеры и барьеры по сегментам</span><span class="dtag-o">Инсайты под оффер и креативы</span><span class="dtag-o">Основа для таргетинга</span></div></div>
-          </div>
-        </div>
+        <div class="svc-row-head"><div><div class="svc-name">Audience Research</div><div class="svc-tagline">Сегменты ЦА, триггеры, барьеры, модели поведения</div></div><span class="expand-icon">+</span></div>
+        <div class="svc-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Комплексное исследование целевой аудитории в нише: кто эти люди, какие у них запросы и потребности, что триггерит к выбору продукта, какие барьеры возникают. Анализируем поведение, мотивы и паттерны выбора — не демографию, а реальную психографику.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Выход в новую нишу или гео</span><span class="dtag-w">Низкая конверсия из рекламы</span><span class="dtag-w">Разработка нового оффера</span><span class="dtag-w">Обновление коммуникации</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Портреты аудиторных сегментов</span><span class="dtag-o">Триггеры и барьеры</span><span class="dtag-o">Инсайты под оффер и креативы</span><span class="dtag-o">Основа для таргетинга</span></div></div>
+        </div></div>
       </div>
     </div>
   </div>
@@ -277,74 +222,45 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
 <!-- SLIDE 4: Продукт и оффер -->
 <div class="slide">
   <div class="grid-bg"></div>
-  <div class="two-col two-col-wide">
+  <div class="two-col">
     <div class="col-left">
       <div class="col-left-num">02</div>
       <div class="col-left-title">Продукт и оффер</div>
-      <div class="col-left-desc">Разбор продукта конкурентов глазами пользователя — от первого касания до целевого действия, включая ценовую модель.</div>
+      <div class="col-left-desc">Разбор продукта и воронки — как конкурентов, так и самого клиента — от первого касания до целевого действия.</div>
     </div>
     <div class="col-right">
       <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Product & Price Research</div><div class="svc-tagline">UX, воронка, ценовая модель, бонусные механики</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Полный разбор продукта конкурентов с точки зрения пользователя: онбординг, UX-путь, структура воронки, механики вовлечения. Параллельно — анализ ценовой модели в нише: бонусные программы, депозитные офферы, welcome-механики, условия вывода.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Редизайн воронки</span><span class="dtag-w">Разработка оффера</span><span class="dtag-w">Выход в новую нишу</span><span class="dtag-w">Конкурент конвертит лучше</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Разбор воронки конкурентов</span><span class="dtag-o">Сравнение ценовых моделей</span><span class="dtag-o">Где уступаем по офферу</span><span class="dtag-o">Точки для дифференциации</span></div></div>
-          </div>
-        </div>
+        <div class="svc-row-head"><div><div class="svc-name">Product & Price Research</div><div class="svc-tagline">UX, воронка, ценовая модель и бонусные механики конкурентов</div></div><span class="expand-icon">+</span></div>
+        <div class="svc-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Полный разбор продукта конкурентов с точки зрения пользователя: онбординг, UX-путь, структура воронки, механики вовлечения. Параллельно — анализ ценовой модели в нише: бонусные программы, welcome-механики, условия вывода.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Редизайн воронки</span><span class="dtag-w">Разработка оффера</span><span class="dtag-w">Выход в новую нишу</span><span class="dtag-w">Конкурент конвертит лучше</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Разбор воронки конкурентов</span><span class="dtag-o">Сравнение ценовых моделей</span><span class="dtag-o">Где уступаем по офферу</span><span class="dtag-o">Точки для дифференциации</span></div></div>
+        </div></div>
       </div>
       <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Funnel & CRO Audit</div><div class="svc-tagline">Точки отвала, барьеры конверсии, как их закрывают конкуренты</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Детальный анализ воронки конкурентов с фокусом на точках отвала: где пользователи уходят, какие барьеры возникают на каждом этапе и какими механиками конкуренты эти барьеры устраняют. Даёт конкретные решения для улучшения собственной конверсии.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Низкая конверсия на этапе</span><span class="dtag-w">Оптимизация посадочных страниц</span><span class="dtag-w">Конкурент конвертит лучше</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Карта воронки конкурентов</span><span class="dtag-o">Точки отвала и причины</span><span class="dtag-o">Конкретные рекомендации по улучшению</span></div></div>
-          </div>
-        </div>
+        <div class="svc-row-head"><div><div class="svc-name">Funnel Analysis</div><div class="svc-tagline">Анализ воронки клиента — точки отвала и барьеры конверсии</div></div><span class="expand-icon">+</span></div>
+        <div class="svc-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Детальный анализ воронки самого клиента: где теряются пользователи, какие барьеры возникают на каждом этапе, что мешает конверсии. Смотрим путь пользователя изнутри — от первого касания до целевого действия — и находим узкие места.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Низкая конверсия на этапе</span><span class="dtag-w">Высокий отток после регистрации</span><span class="dtag-w">Оптимизация посадочных страниц</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Карта воронки с точками отвала</span><span class="dtag-o">Причины потери пользователей</span><span class="dtag-o">Приоритеты для улучшения</span></div></div>
+        </div></div>
       </div>
       <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Onboarding Research</div><div class="svc-tagline">Путь от регистрации до первого целевого действия</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Пошаговый разбор онбординга конкурентов: от регистрации до первого целевого действия. Фиксируем каждый шаг, барьеры, механики активации, сообщения и визуальные триггеры. Результат — понимание, что именно удерживает пользователя и ведёт его к конверсии.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Высокий отток после регистрации</span><span class="dtag-w">Низкая активация пользователей</span><span class="dtag-w">Редизайн онбординга</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Пошаговая карта онбординга конкурентов</span><span class="dtag-o">Механики активации</span><span class="dtag-o">Идеи для улучшения собственного пути</span></div></div>
-          </div>
-        </div>
-      </div>
-      <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Retention Research</div><div class="svc-tagline">Механики удержания и churn-факторы в нише</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Анализ того, как конкуренты удерживают пользователей после первого действия: программы лояльности, триггерные коммуникации, механики возврата, реактивация оттока. Определяем ключевые churn-факторы в нише и что делают лидеры рынка, чтобы их нивелировать.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Рост оттока пользователей</span><span class="dtag-w">Цель растить LTV</span><span class="dtag-w">Запуск программы лояльности</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Карта retention-механик конкурентов</span><span class="dtag-o">Churn-факторы в нише</span><span class="dtag-o">Рекомендации по удержанию</span></div></div>
-          </div>
-        </div>
+        <div class="svc-row-head"><div><div class="svc-name">Retention Research</div><div class="svc-tagline">Механики удержания и churn-факторы в нише</div></div><span class="expand-icon">+</span></div>
+        <div class="svc-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Анализ того, как конкуренты удерживают пользователей после первого действия: программы лояльности, триггерные коммуникации, механики возврата, реактивация оттока. Определяем ключевые churn-факторы в нише и что делают лидеры рынка чтобы их нивелировать.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Рост оттока пользователей</span><span class="dtag-w">Цель растить LTV</span><span class="dtag-w">Запуск программы лояльности</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Карта retention-механик конкурентов</span><span class="dtag-o">Churn-факторы в нише</span><span class="dtag-o">Рекомендации по удержанию</span></div></div>
+        </div></div>
       </div>
     </div>
   </div>
 </div>
 
-
-<!-- SLIDE 6: Каналы и медиа -->
+<!-- SLIDE 5: Каналы и медиа -->
 <div class="slide">
   <div class="grid-bg"></div>
-  <div class="two-col two-col-wide">
+  <div class="two-col">
     <div class="col-left">
       <div class="col-left-num">03</div>
       <div class="col-left-title">Каналы и медиа</div>
@@ -352,52 +268,29 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
     </div>
     <div class="col-right">
       <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Channel Research</div><div class="svc-tagline">Эффективные каналы в нише и гео, незанятые возможности</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Анализ каналов привлечения трафика в нише и конкретном гео: какие каналы используют конкуренты, какие из них дают результат, какие остаются неохваченными. Включает оценку объёмов, стоимости трафика и потенциала каждого канала для входа.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Выход в новое гео</span><span class="dtag-w">Текущие каналы перестали работать</span><span class="dtag-w">Поиск новых источников трафика</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Карта каналов конкурентов</span><span class="dtag-o">Что работает в нише</span><span class="dtag-o">Незанятые возможности</span><span class="dtag-o">Рекомендации по приоритетам</span></div></div>
-          </div>
-        </div>
+        <div class="svc-row-head"><div><div class="svc-name">Channel Research</div><div class="svc-tagline">Эффективные каналы в нише и гео, незанятые возможности</div></div><span class="expand-icon">+</span></div>
+        <div class="svc-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Анализ каналов привлечения трафика в нише и конкретном гео: какие каналы используют конкуренты, какие из них дают результат, какие остаются неохваченными. Включает оценку объёмов, стоимости трафика и потенциала каждого канала для входа.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Выход в новое гео</span><span class="dtag-w">Текущие каналы перестали работать</span><span class="dtag-w">Поиск новых источников трафика</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Карта каналов конкурентов</span><span class="dtag-o">Что работает в нише</span><span class="dtag-o">Незанятые возможности</span><span class="dtag-o">Рекомендации по приоритетам</span></div></div>
+        </div></div>
       </div>
       <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Paid Media Audit</div><div class="svc-tagline">Анализ платных размещений — своих и конкурентов</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Двусторонний анализ: оценка эффективности текущих платных размещений клиента и параллельное исследование того, как конкуренты распределяют платные бюджеты по каналам, форматам и гео. Выявляем неэффективные расходы и упущенные возможности.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Высокий CPA, низкий ROAS</span><span class="dtag-w">Перераспределение медиабюджета</span><span class="dtag-w">Оценка конкурентных бюджетов</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Разбор текущих размещений</span><span class="dtag-o">Бюджетные приоритеты конкурентов</span><span class="dtag-o">Рекомендации по перераспределению</span></div></div>
-          </div>
-        </div>
-      </div>
-      <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Influencer & Partnership Research</div><div class="svc-tagline">Инфлюенсеры, партнёры и affiliate-возможности в нише</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Исследование экосистемы инфлюенсеров и партнёров в нише: кто работает с конкурентами, на каких условиях, какие форматы используются, где есть доступные точки входа. Включает оценку affiliate-возможностей и партнёрских программ в категории.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Запуск influencer-канала</span><span class="dtag-w">Поиск партнёров для роста</span><span class="dtag-w">Выход в новое гео через лидеров мнений</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Список релевантных инфлюенсеров</span><span class="dtag-o">Форматы и условия конкурентов</span><span class="dtag-o">Affiliate-возможности</span><span class="dtag-o">Рекомендации по входу</span></div></div>
-          </div>
-        </div>
+        <div class="svc-row-head"><div><div class="svc-name">Influencer Research</div><div class="svc-tagline">Какие инфлюенсеры работают с конкурентами и в нише</div></div><span class="expand-icon">+</span></div>
+        <div class="svc-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Исследование инфлюенсер-ландшафта в нише: кто работает с конкурентами, какие форматы используются, какова аудитория и вовлечённость у ключевых авторов. Даёт понимание с кем стоит работать и на каких условиях.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Запуск influencer-канала</span><span class="dtag-w">Выход в новое гео через лидеров мнений</span><span class="dtag-w">Конкурентная разведка</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Список релевантных инфлюенсеров</span><span class="dtag-o">Кто работает с конкурентами</span><span class="dtag-o">Форматы и охваты</span></div></div>
+        </div></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 7: Креативы и контент -->
+<!-- SLIDE 6: Креативы и контент -->
 <div class="slide">
   <div class="grid-bg"></div>
-  <div class="two-col two-col-wide">
+  <div class="two-col">
     <div class="col-left">
       <div class="col-left-num">04</div>
       <div class="col-left-title">Креативы и контент</div>
@@ -405,53 +298,38 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
     </div>
     <div class="col-right">
       <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Creative Research</div><div class="svc-tagline">Месседжи, форматы и углы коммуникации конкурентов</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Анализ рекламных коммуникаций конкурентов в разрезе гео: какие месседжи используют, какие образы и форматы работают, как позиционируют продукт на каждом уровне воронки. Даёт конкретные референсы и смысловые углы для собственных креативов.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Запуск рекламной кампании</span><span class="dtag-w">Низкий CTR из креативов</span><span class="dtag-w">Выход в новое гео</span><span class="dtag-w">Ребрендинг</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Референсы креативов конкурентов</span><span class="dtag-o">Паттерны коммуникации</span><span class="dtag-o">Инсайты для брифа на креативы</span></div></div>
-          </div>
-        </div>
+        <div class="svc-row-head"><div><div class="svc-name">Creative Research</div><div class="svc-tagline">Месседжи, форматы и углы коммуникации конкурентов</div></div><span class="expand-icon">+</span></div>
+        <div class="svc-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Анализ рекламных коммуникаций конкурентов в разрезе гео: какие месседжи используют, какие образы и форматы работают, как позиционируют продукт на каждом уровне воронки. Даёт конкретные референсы и смысловые углы для собственных креативов.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Запуск рекламной кампании</span><span class="dtag-w">Низкий CTR из креативов</span><span class="dtag-w">Выход в новое гео</span><span class="dtag-w">Ребрендинг</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Референсы креативов конкурентов</span><span class="dtag-o">Паттерны коммуникации</span><span class="dtag-o">Инсайты для брифа на креативы</span></div></div>
+        </div></div>
       </div>
       <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Ad Library Analysis</div><div class="svc-tagline">Активные объявления конкурентов в Meta, TikTok и других платформах</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Разбор рекламных библиотек платформ — Meta, TikTok, Google и других. Фиксируем что конкуренты крутят прямо сейчас: форматы, офферы, визуальные подходы, длительность активности объявлений. Позволяет понять, что тестируется, что масштабируется и что уже отработало.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Конкурентная разведка перед запуском</span><span class="dtag-w">Поиск рабочих форматов в нише</span><span class="dtag-w">Обновление креативной стратегии</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Подборка актуальных объявлений</span><span class="dtag-o">Популярные форматы и офферы</span><span class="dtag-o">Гипотезы для собственных тестов</span></div></div>
-          </div>
-        </div>
+        <div class="svc-row-head"><div><div class="svc-name">Ad Library Analysis</div><div class="svc-tagline">Активные объявления конкурентов — форматы, офферы, что тестируют</div></div><span class="expand-icon">+</span></div>
+        <div class="svc-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Разбор активных рекламных объявлений конкурентов прямо сейчас: какие форматы крутят, какие офферы тестируют, как долго активны объявления. Позволяет понять что работает, что масштабируется и что уже отработало.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Конкурентная разведка перед запуском</span><span class="dtag-w">Поиск рабочих форматов в нише</span><span class="dtag-w">Обновление креативной стратегии</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Подборка актуальных объявлений</span><span class="dtag-o">Популярные форматы и офферы</span><span class="dtag-o">Гипотезы для собственных тестов</span></div></div>
+        </div></div>
       </div>
       <div class="svc-row" onclick="toggleSvc(this)">
-        <div class="svc-row-head">
-          <div><div class="svc-name">Content Audit</div><div class="svc-tagline">Органический контент конкурентов — темы, форматы, результаты</div></div>
-          <span class="expand-icon">+</span>
-        </div>
-        <div class="svc-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Систематический анализ органического контента конкурентов: что публикуют, какие темы и форматы дают охват и вовлечённость, какие публикации резонируют с аудиторией. Выявляем контентные паттерны, которые работают в нише, и белые пятна, которые никто ещё не закрыл.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Запуск или перезапуск контент-канала</span><span class="dtag-w">Низкая вовлечённость в органике</span><span class="dtag-w">Разработка контент-стратегии</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Топ-форматы и темы конкурентов</span><span class="dtag-o">Что работает в органике</span><span class="dtag-o">Незакрытые контентные ниши</span><span class="dtag-o">Идеи для собственного контента</span></div></div>
-          </div>
-        </div>
+        <div class="svc-row-head"><div><div class="svc-name">Content Audit</div><div class="svc-tagline">Органический контент конкурентов — темы, форматы, результаты</div></div><span class="expand-icon">+</span></div>
+        <div class="svc-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Систематический анализ органического контента конкурентов: что публикуют, какие темы и форматы дают охват и вовлечённость. Выявляем контентные паттерны которые работают в нише и незакрытые ниши которые никто ещё не занял.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Запуск или перезапуск контент-канала</span><span class="dtag-w">Низкая вовлечённость в органике</span><span class="dtag-w">Разработка контент-стратегии</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Топ-форматы и темы конкурентов</span><span class="dtag-o">Что работает в органике</span><span class="dtag-o">Незакрытые контентные ниши</span></div></div>
+        </div></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 8: STRATEGIES -->
+<!-- SLIDE 7: STRATEGIES -->
 <div class="slide">
   <div class="grid-bg"></div>
   <div class="glow" style="width:500px;height:400px;top:0;right:0;background:rgba(66,245,200,0.04)"></div>
-  <div class="two-col two-col-wide">
+  <div class="two-col">
     <div class="col-left">
       <div class="col-left-num" style="color:rgba(66,245,200,0.07)">S</div>
       <div class="col-left-title" style="color:var(--accent2)">Стратегии</div>
@@ -463,61 +341,53 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg);
           <div><div class="strat-badge">На базе Market Research / Channel Research</div><div class="strat-name">Media Strategy</div><div class="strat-sub">Каналы, бюджеты, сплиты</div></div>
           <span class="strat-expand">+</span>
         </div>
-        <div class="strat-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Переводим данные ресёрча в конкретный медиамикс: какие каналы запускать, в какой последовательности, как распределить бюджет между ними. Стратегия строится на реальных данных о конкурентах и нише — не на гипотезах.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Планирование медиабюджета</span><span class="dtag-w">Выход в новое гео</span><span class="dtag-w">Перераспределение бюджета между каналами</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Приоритизация каналов</span><span class="dtag-o">Рекомендуемые сплиты бюджета</span><span class="dtag-o">Дорожная карта запуска</span></div></div>
-          </div>
-        </div>
+        <div class="strat-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Переводим данные ресёрча в конкретный медиамикс: какие каналы запускать, в какой последовательности, как распределить бюджет. Стратегия строится на реальных данных о конкурентах и нише — не на гипотезах.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Планирование медиабюджета</span><span class="dtag-w">Выход в новое гео</span><span class="dtag-w">Перераспределение бюджета</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Приоритизация каналов</span><span class="dtag-o">Рекомендуемые сплиты бюджета</span><span class="dtag-o">Дорожная карта запуска</span></div></div>
+        </div></div>
       </div>
       <div class="strat-row" onclick="toggleStrat(this)">
         <div class="strat-row-head">
           <div><div class="strat-badge">На базе Market Research + Audience Research</div><div class="strat-name">Go-to-Market Strategy</div><div class="strat-sub">Выход в новое гео или нишу</div></div>
           <span class="strat-expand">+</span>
         </div>
-        <div class="strat-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Комплексная стратегия выхода на новый рынок: целевая аудитория и её сегменты, позиционирование и оффер, приоритетные каналы, план запуска по этапам с KPI. Объединяет данные о рынке и аудитории в единый обоснованный план.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Выход в новое гео или нишу</span><span class="dtag-w">Запуск нового продукта</span><span class="dtag-w">Построение стратегии с нуля</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Стратегия с обоснованием</span><span class="dtag-o">Приоритеты по каналам и аудиториям</span><span class="dtag-o">Поэтапный план запуска</span></div></div>
-          </div>
-        </div>
+        <div class="strat-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Комплексная стратегия выхода на новый рынок: целевая аудитория и её сегменты, позиционирование и оффер, приоритетные каналы, план запуска по этапам с KPI. Объединяет данные о рынке и аудитории в единый обоснованный план.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Выход в новое гео или нишу</span><span class="dtag-w">Запуск нового продукта</span><span class="dtag-w">Построение стратегии с нуля</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Стратегия с обоснованием</span><span class="dtag-o">Приоритеты по каналам и аудиториям</span><span class="dtag-o">Поэтапный план запуска</span></div></div>
+        </div></div>
       </div>
       <div class="strat-row" onclick="toggleStrat(this)" style="border-bottom:none">
         <div class="strat-row-head">
           <div><div class="strat-badge">На базе Content Audit + Audience Research</div><div class="strat-name">Content Strategy</div><div class="strat-sub">Темы, форматы, каналы для контента</div></div>
           <span class="strat-expand">+</span>
         </div>
-        <div class="strat-detail">
-          <div class="detail-3col">
-            <div><div class="dcol-label">Описание</div><div class="dcol-text">Стратегия контент-маркетинга на основе данных: что аудитория хочет читать, что уже делают конкуренты и где остаётся незакрытый спрос. Определяем темы, форматы, каналы публикации и редакционную политику — чтобы контент работал системно, а не ситуативно.</div></div>
-            <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Запуск контент-канала</span><span class="dtag-w">Органика не растёт</span><span class="dtag-w">Нужна система вместо разовых публикаций</span></div></div>
-            <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Контент-план по темам и форматам</span><span class="dtag-o">Приоритеты по каналам</span><span class="dtag-o">Редполитика и тональность</span></div></div>
-          </div>
-        </div>
+        <div class="strat-detail"><div class="detail-3col">
+          <div><div class="dcol-label">Описание</div><div class="dcol-text">Стратегия контент-маркетинга на основе данных: что аудитория хочет читать, что делают конкуренты и где незакрытый спрос. Определяем темы, форматы, каналы и редполитику — чтобы контент работал системно, а не ситуативно.</div></div>
+          <div><div class="dcol-label">Применение</div><div class="dtags"><span class="dtag-w">Запуск контент-канала</span><span class="dtag-w">Органика не растёт</span><span class="dtag-w">Нужна система вместо разовых публикаций</span></div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags"><span class="dtag-o">Контент-план по темам и форматам</span><span class="dtag-o">Приоритеты по каналам</span><span class="dtag-o">Редполитика и тональность</span></div></div>
+        </div></div>
       </div>
     </div>
   </div>
 </div>
 
-
 <!-- SLIDE 8: SCENARIOS -->
-<div class="slide" id="slide-scenarios">
+<div class="slide">
   <div class="grid-bg"></div>
   <div class="glow" style="width:400px;height:400px;top:-60px;right:100px;background:rgba(200,245,66,0.04)"></div>
   <div style="position:relative;z-index:1;display:grid;grid-template-columns:300px 1fr;height:100%">
     <div class="col-left">
       <div class="col-left-num" style="color:rgba(200,245,66,0.06)">→</div>
       <div class="col-left-title" style="margin-top:-24px">Типовые сценарии</div>
-      <div class="col-left-desc">Как услуги работают в связке под реальные задачи клиента.</div>
+      <div class="col-left-desc">Как услуги работают в связке под реальные задачи.</div>
       <div style="margin-top:28px">
         <input type="text" id="sc-search" placeholder="Поиск сценария..." oninput="filterSc(this.value)" style="width:100%;font-size:12px;background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.1);color:var(--text);padding:8px 12px;outline:none;font-family:var(--body)">
       </div>
-      <div style="margin-top:16px;font-size:11px;color:var(--muted2)" id="sc-count">13 сценариев</div>
+      <div style="margin-top:16px;font-size:11px;color:var(--muted2)" id="sc-count">16 сценариев</div>
     </div>
-    <div style="border-left:0.5px solid var(--border);overflow-y:auto;padding:0" id="sc-list">
-    </div>
+    <div style="border-left:0.5px solid var(--border);overflow-y:auto;" id="sc-list"></div>
   </div>
 </div>
 
@@ -535,9 +405,9 @@ const SCENARIOS = [
   {
     name: "Низкая конверсия из платного трафика",
     desc: "Бюджет тратится, но регистраций мало — непонятно где ломается воронка",
-    services: ["① Funnel & CRO Audit — точки отвала и как их закрывают конкуренты","② Onboarding Research — механики активации после регистрации","③ Ad Library Analysis — что тестируют конкуренты в рекламе прямо сейчас"],
-    value: "Понимание где именно ломается воронка, что делают конкуренты чтобы этого избежать — и конкретные гипотезы для тестирования.",
-    result: ["Карта точек отвала","Механики активации конкурентов","Гипотезы для A/B тестов"]
+    services: ["① Funnel Analysis — где именно теряются пользователи в воронке клиента","② Product & Price Research — как устроена воронка у конкурентов которые конвертят лучше","③ Ad Library Analysis — что тестируют конкуренты в рекламе прямо сейчас"],
+    value: "Понимание где именно ломается воронка клиента, как это решают конкуренты — и конкретные гипотезы для улучшения.",
+    result: ["Карта точек отвала в воронке","Разбор воронок конкурентов","Гипотезы для тестирования"]
   },
   {
     name: "Запуск новой рекламной кампании",
@@ -550,70 +420,70 @@ const SCENARIOS = [
     name: "Появился сильный конкурент",
     desc: "На рынке появился новый игрок, который начинает забирать долю",
     services: ["① Competitor Analysis — полный разбор продукта, маркетинга и слабых мест","② Product & Price Research — сравнение оффера и ценовой модели","③ Ad Library Analysis — что и как конкурент продвигает прямо сейчас"],
-    value: "Чёткое понимание сильных и слабых сторон конкурента, где он уязвим и как использовать это в собственном позиционировании.",
-    result: ["Разбор продукта и маркетинга конкурента","Сравнение офферов","Точки для дифференциации","Рекомендации по ответным действиям"]
+    value: "Чёткое понимание сильных и слабых сторон конкурента, где он уязвим и как использовать это в позиционировании.",
+    result: ["Разбор продукта и маркетинга конкурента","Сравнение офферов","Точки для дифференциации"]
   },
   {
     name: "Ребрендинг и обновление коммуникации",
     desc: "Клиент обновляет позиционирование и ищет новые углы для рекламы",
     services: ["① Audience Research — как аудитория воспринимает категорию сейчас","② Creative Research — как конкуренты коммуницируют и что работает","③ Competitor Analysis — как позиционируют себя ключевые игроки","④ Content Strategy — новая стратегия коммуникации и тональность"],
-    value: "Обновлённое позиционирование на основе данных, а не интуиции — с референсами, углами и стратегией коммуникации.",
+    value: "Обновлённое позиционирование на основе данных — с референсами, углами и стратегией коммуникации.",
     result: ["Анализ восприятия категории","Референсы конкурентов","Новые углы коммуникации","Контент-стратегия"]
   },
   {
     name: "Растёт отток пользователей",
     desc: "LTV падает, пользователи уходят после первого действия",
-    services: ["① Retention Research — как конкуренты удерживают пользователей","② Onboarding Research — где теряются после регистрации","③ Funnel & CRO Audit — точки отвала на каждом этапе воронки"],
-    value: "Понимание почему уходят пользователи и конкретные механики удержания, которые уже работают у конкурентов в нише.",
-    result: ["Карта retention-механик конкурентов","Точки отвала по этапам","Рекомендации по удержанию"]
+    services: ["① Retention Research — как конкуренты удерживают пользователей в нише","② Funnel Analysis — где именно в воронке клиента происходит отток","③ Product & Price Research — какие механики лояльности используют конкуренты"],
+    value: "Понимание почему уходят пользователи и конкретные механики удержания которые уже работают у конкурентов.",
+    result: ["Карта retention-механик конкурентов","Точки отвала в воронке клиента","Рекомендации по удержанию"]
   },
   {
     name: "Запуск influencer-канала",
     desc: "Клиент хочет выйти на аудиторию через лидеров мнений",
-    services: ["① Audience Research — где сидит аудитория и кому доверяет","② Influencer & Partnership Research — кто работает с конкурентами, форматы и условия","③ Content Strategy — стратегия контента для influencer-канала"],
-    value: "Список релевантных инфлюенсеров, понимание форматов которые работают в нише — и стратегия для системного развития канала.",
-    result: ["Список инфлюенсеров и условия","Форматы конкурентов","Контент-стратегия для канала"]
+    services: ["① Audience Research — где сидит аудитория и кому доверяет","② Influencer Research — кто работает с конкурентами, форматы и охваты","③ Content Strategy — стратегия контента для influencer-канала"],
+    value: "Понимание с кем стоит работать, какие форматы используют конкуренты — и стратегия для системного развития канала.",
+    result: ["Список релевантных инфлюенсеров","Форматы конкурентов","Контент-стратегия для канала"]
   },
   {
     name: "Перераспределение медиабюджета",
     desc: "Текущие каналы дают слабый результат, нужно понять куда переложить бюджет",
-    services: ["① Paid Media Audit — оценка текущих размещений и бюджетов конкурентов","② Channel Research — что работает в нише, какие каналы недооценены","③ Media Strategy — новый медиамикс с обоснованием"],
+    services: ["① Channel Research — что работает в нише, какие каналы недооценены","② Funnel Analysis — где теряется эффективность в текущей воронке","③ Media Strategy — новый медиамикс с обоснованием"],
     value: "Чёткое понимание где теряется бюджет сейчас и куда его переложить — с обоснованием на основе данных по рынку.",
-    result: ["Аудит текущих размещений","Карта каналов конкурентов","Новый медиамикс с приоритетами"]
+    result: ["Карта каналов конкурентов","Анализ текущей воронки","Новый медиамикс с приоритетами"]
   },
   {
     name: "Запуск контент-маркетинга",
     desc: "Клиент хочет выстроить органический канал привлечения с нуля",
     services: ["① Content Audit — что работает у конкурентов в органике","② Audience Research — что интересно аудитории, какие форматы заходят","③ Content Strategy — стратегия с темами, форматами и каналами"],
-    value: "Готовая система контент-маркетинга на основе данных — не набор тем наугад, а стратегия которая закрывает реальный спрос аудитории.",
+    value: "Готовая система контент-маркетинга на основе данных — не набор тем наугад, а стратегия которая закрывает реальный спрос.",
     result: ["Топ-форматы и темы конкурентов","Портреты аудитории","Контент-план и редполитика"]
   },
   {
     name: "Редизайн оффера и бонусной механики",
     desc: "Оффер не конвертит, хотят понять как это решают конкуренты",
-    services: ["① Product & Price Research — бонусные программы и условия конкурентов","② Funnel & CRO Audit — как оффер влияет на конверсию в воронке","③ Competitor Analysis — где клиент уступает конкурентам по офферу"],
+    services: ["① Product & Price Research — бонусные программы и условия конкурентов","② Funnel Analysis — как оффер влияет на конверсию в воронке клиента","③ Competitor Analysis — где клиент уступает конкурентам по офферу"],
     value: "Понимание как устроены офферы конкурентов, где конкретно клиент проигрывает — и что изменить чтобы конвертить лучше.",
     result: ["Сравнение офферов конкурентов","Анализ бонусных механик","Точки для улучшения оффера"]
   },
   {
     name: "Выход в новую нишу",
     desc: "Продукт уже есть, но клиент хочет зайти в смежную категорию",
-    services: ["① Market Research — кто уже в нише, как устроен рынок","② Trend Research — куда движется ниша, что растёт","③ Audience Research — кто новая аудитория и чем отличается","④ Go-to-Market Strategy — стратегия входа в новую категорию"],
-    value: "Понимание новой ниши изнутри перед входом — кто конкуренты, кто аудитория, куда движется рынок и как зайти с правильным позиционированием.",
-    result: ["Карта новой ниши","Анализ трендов","Портреты новой аудитории","Стратегия входа"]
+    services: ["① Market Research — кто уже в нише, как устроен рынок","② Audience Research — кто новая аудитория и чем отличается от текущей","③ Go-to-Market Strategy — стратегия входа в новую категорию"],
+    value: "Понимание новой ниши изнутри перед входом — кто конкуренты, кто аудитория и как зайти с правильным позиционированием.",
+    result: ["Карта новой ниши","Портреты новой аудитории","Стратегия входа"]
   },
   {
     name: "Планирование стратегии на следующий период",
     desc: "Квартальное или годовое планирование — нужно понять куда двигаться",
-    services: ["① Trend Research — что меняется в нише и куда движется рынок","② Competitor Analysis — что делают конкуренты и куда инвестируют","③ Channel Research — какие каналы набирают вес","④ Media Strategy — медиаплан на период с обоснованием"],
-    value: "Стратегия на период, построенная на актуальных данных о рынке и конкурентах — а не на прошлогодних цифрах и ощущениях.",
-    result: ["Карта трендов и изменений","Анализ конкурентов","Медиаплан на период"]
+    services: ["① Competitor Analysis — что делают конкуренты и куда инвестируют","② Channel Research — какие каналы набирают вес в нише","③ Media Strategy — медиаплан на период с обоснованием"],
+    value: "Стратегия на период, построенная на актуальных данных о рынке и конкурентах — а не на прошлогодних цифрах.",
+    result: ["Анализ конкурентов","Карта растущих каналов","Медиаплан на период"]
   },
   {
     name: "Низкая вовлечённость в органике",
     desc: "Контент выходит, но не работает — мало охвата и реакций",
     services: ["① Content Audit — что работает у конкурентов, какие форматы дают охват","② Audience Research — что интересно аудитории и в каких форматах","③ Content Strategy — обновлённая стратегия с темами и форматами"],
-    value: "Понимание почему текущий контент не работает и что изменить — с конкретными форматами и темами которые уже дают результат в нише.",
+    value: "Понимание почему текущий контент не работает и что изменить — с форматами и темами которые уже дают результат в нише.",
     result: ["Разбор контента конкурентов","Что работает в органике","Обновлённая контент-стратегия"]
   },
   {
@@ -626,16 +496,16 @@ const SCENARIOS = [
   {
     name: "Неудачный запуск — разбор полётов",
     desc: "Кампания не сработала, нужно понять почему и что изменить",
-    services: ["① Funnel & CRO Audit — где именно сломалась воронка","② Ad Library Analysis — как сработали аналогичные кампании у конкурентов","③ Creative Research — какие форматы и месседжи работают в нише"],
-    value: "Чёткое понимание что именно пошло не так — воронка, креативы или каналы — и конкретный план что изменить при следующем запуске.",
-    result: ["Диагностика провала по этапам","Анализ успешных кампаний конкурентов","Рекомендации для следующего запуска"]
+    services: ["① Funnel Analysis — где именно сломалась воронка клиента","② Ad Library Analysis — как сработали аналогичные кампании у конкурентов","③ Creative Research — какие форматы и месседжи работают в нише"],
+    value: "Чёткое понимание что именно пошло не так — воронка, креативы или каналы — и план что изменить при следующем запуске.",
+    result: ["Диагностика воронки по этапам","Анализ успешных кампаний конкурентов","Рекомендации для следующего запуска"]
   },
   {
     name: "Масштабирование работающего канала",
     desc: "Один канал уже даёт результат, хотят выжать больше и найти что добавить рядом",
-    services: ["① Paid Media Audit — где теряется эффективность в текущем канале","② Channel Research — какие смежные каналы работают у конкурентов","③ Media Strategy — как перераспределить бюджет для масштабирования"],
+    services: ["① Funnel Analysis — где теряется эффективность в текущем канале клиента","② Channel Research — какие смежные каналы работают у конкурентов","③ Media Strategy — как перераспределить бюджет для масштабирования"],
     value: "Понимание потолка текущего канала и что запустить рядом — с обоснованием на данных, а не на интуиции.",
-    result: ["Аудит текущего канала","Карта смежных каналов конкурентов","Стратегия масштабирования с бюджетами"]
+    result: ["Анализ текущего канала","Карта смежных каналов конкурентов","Стратегия масштабирования с бюджетами"]
   }
 ];
 
@@ -643,14 +513,12 @@ function renderScenarios(filter) {
   const list = document.getElementById('sc-list');
   const count = document.getElementById('sc-count');
   const filtered = filter ? SCENARIOS.filter(s => s.name.toLowerCase().includes(filter.toLowerCase()) || s.desc.toLowerCase().includes(filter.toLowerCase())) : SCENARIOS;
-  count.textContent = filtered.length + ' сценари' + (filtered.length===1?'й':filtered.length<5?'я':'ев');
+  const n = filtered.length;
+  count.textContent = n + ' сценари' + (n===1?'й':n<5?'я':'ев');
   list.innerHTML = filtered.map((s, i) => `
     <div class="svc-row" onclick="toggleScRow(this)" style="padding-left:40px;padding-right:40px;${i===filtered.length-1?'border-bottom:none':''}">
       <div class="svc-row-head">
-        <div>
-          <div class="svc-name">${s.name}</div>
-          <div class="svc-tagline">${s.desc}</div>
-        </div>
+        <div><div class="svc-name">${s.name}</div><div class="svc-tagline">${s.desc}</div></div>
         <span class="expand-icon">+</span>
       </div>
       <div class="svc-detail">
@@ -661,14 +529,8 @@ function renderScenarios(filter) {
               ${s.services.map(sv=>`<span class="dtag-w" style="text-align:left;white-space:normal">${sv}</span>`).join('')}
             </div>
           </div>
-          <div>
-            <div class="dcol-label">Ценность</div>
-            <div class="dcol-text">${s.value}</div>
-          </div>
-          <div>
-            <div class="dcol-label">Результат</div>
-            <div class="dtags">${s.result.map(r=>`<span class="dtag-o">${r}</span>`).join('')}</div>
-          </div>
+          <div><div class="dcol-label">Ценность</div><div class="dcol-text">${s.value}</div></div>
+          <div><div class="dcol-label">Результат</div><div class="dtags">${s.result.map(r=>`<span class="dtag-o">${r}</span>`).join('')}</div></div>
         </div>
       </div>
     </div>
@@ -688,10 +550,6 @@ function toggleScRow(row) {
   if (!isOpen) { row.classList.add('open'); detail.classList.add('open'); }
 }
 
-renderScenarios();
-</script>
-
-<script>
 const TOTAL = 8;
 let current = 0;
 
@@ -699,7 +557,7 @@ function buildDots() {
   const c = document.getElementById('dots');
   for (let i = 0; i < TOTAL; i++) {
     const d = document.createElement('div');
-    d.className = 'nav-dot' + (i === 0 ? ' active' : '');
+    d.className = 'nav-dot' + (i===0?' active':'');
     d.onclick = () => goTo(i);
     c.appendChild(d);
   }
@@ -710,17 +568,13 @@ function goTo(n) {
   slides[current].classList.remove('active');
   slides[current].classList.add('prev');
   setTimeout(() => slides[current].classList.remove('prev'), 500);
-  current = Math.max(0, Math.min(TOTAL - 1, n));
+  current = Math.max(0, Math.min(TOTAL-1, n));
   slides[current].classList.add('active');
-  document.querySelectorAll('.nav-dot').forEach((d, i) => d.classList.toggle('active', i === current));
-  document.getElementById('counter').textContent = (current + 1) + ' / ' + TOTAL;
-  slides[current].querySelectorAll('.svc-row.open,.strat-row.open').forEach(r => {
-    r.classList.remove('open');
-    r.querySelector('.svc-detail,.strat-detail') && r.querySelector('.svc-detail,.strat-detail').classList.remove('open');
-  });
+  document.querySelectorAll('.nav-dot').forEach((d,i) => d.classList.toggle('active', i===current));
+  document.getElementById('counter').textContent = (current+1)+' / '+TOTAL;
 }
 
-function go(dir) { goTo(current + dir); }
+function go(dir) { goTo(current+dir); }
 
 function toggleSvc(row) {
   const detail = row.querySelector('.svc-detail');
@@ -745,11 +599,12 @@ function toggleStrat(card) {
 }
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') go(1);
-  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') go(-1);
+  if (e.key==='ArrowRight'||e.key==='ArrowDown') go(1);
+  if (e.key==='ArrowLeft'||e.key==='ArrowUp') go(-1);
 });
 
 buildDots();
+renderScenarios();
 </script>
 </body>
 </html>
